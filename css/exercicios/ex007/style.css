@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body{
+    background-color: rgba(0, 0, 0, 0.89);
+    color: white;
+}
+
+h1{
+    margin: 15px 0;
+    font-variant: small-caps;
+}
+
+div{
+    width: 200px;
+    height: 200px;
+    border: 1px solid white;
+    margin-bottom: 15px;
+    text-align: center;
+    background-color: gray;
+}
+
+div:hover{
+    background-color: rgb(37, 241, 19);
+    color: black;
+}
