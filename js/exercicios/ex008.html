@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert</title>
+    <style>
+        body{
+            background-color: rgba(0, 0, 0, 0.822);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <main>
+        
+        <script>
+
+            window.alert("Bem-vindo ao site")
+    
+            confirmacao = window.confirm("Deseja continuar?")
+                if(confirmacao == true){
+                    let nomeUsuario = window.prompt("Digite o seu nome?")
+                    document.write(`Olá ${nomeUsuario} seja bem vindo ao site`)
+                    console.log(nomeUsuario);
+                }else{
+                    document.write(`Você escolheu sair`)
+                    console.log("Você escolheu sair")
+                }
+
+        </script>
+
+    </main>
+
+
+
+
+</body>
+
+</html>
