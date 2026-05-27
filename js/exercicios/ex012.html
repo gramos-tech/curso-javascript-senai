@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pegar elementos</title>
+</head>
+
+<body>
+
+    <h1>Pegar elementos</h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas repudiandae magnam officiis earum consequatur minima nostrum dolorem mollitia? Dolores fuga sequi culpa, asperiores id commodi eius laudantium nisi repudiandae voluptas.</p>
+
+    <p>TESTANDO NOVO PARÁGRAFO</p>
+
+    <div id="container">
+        TESTES
+    </div>
+
+    <div class="teste">
+        TESTE2
+    </div>
+
+    <script>
+
+        let elemento = window.document.getElementById("container")
+        console.log(elemento)
+
+        elemento.style.backgroundColor = "blue"
+        elemento.style.color = "white"
+
+
+        let elemento2 = window.document.getElementsByClassName("teste")[0]
+        console.log(elemento2)
+
+        elemento2.style.backgroundColor = "green"
+        elemento2.style.color = "white"
+
+
+    </script>
+
+</body>
+
+</html>

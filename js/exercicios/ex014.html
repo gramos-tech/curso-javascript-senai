@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{  
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #container{
+            background-color: lightblue;
+            color: black;
+            width: 500px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .numbers{
+            margin: 10px 0;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        
+    <h1>Somar valores</h1>
+
+    <input type="number" name="numero1" id="numero1" class="numbers">
+    +
+    <input type="number" name="numero2" id="numero2" class="numbers">
+    <input type="button" value="Somar" onclick="somarNumeros()">
+
+    <div id="resultado">
+        Resultado
+    </div>
+
+    </div>
+
+    <script>
+
+        function somarNumeros (){
+            let numero1 = Number(document.getElementById('numero1').value)
+            let numero2 = Number(document.getElementById('numero2').value)
+            
+            let soma = numero1 + numero2
+
+            let resultado = document.getElementById('resultado')
+            resultado.innerHTML = `A soma dos números é igual: <strong> ${soma}</strong>`
+            
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

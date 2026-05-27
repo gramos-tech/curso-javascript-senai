@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <style>
+        #quadrado {
+            background-color: rgb(153, 0, 255);
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Trabalhando com eventos do JS</h1>
+
+    <div id="quadrado" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        Oi
+    </div>
+
+    <script>
+        
+        const elemento = document.getElementById('quadrado')
+
+        
+        function entrar() {
+            elemento.innerHTML = 'Entrou'
+            elemento.style.backgroundColor = 'blue'
+            elemento.style.color = 'white'
+        }
+
+        function clicar() {
+            elemento.innerHTML = 'Clicou'
+            elemento.style.backgroundColor = 'red'
+            elemento.style.color = 'white'
+        }
+
+        function sair() {
+            elemento.innerHTML = 'Saiu'
+            elemento.style.backgroundColor = 'rgb(153, 0, 255)'
+            elemento.style.color = 'white'
+        }
+
+    </script>
+
+</body>
+
+</html>
