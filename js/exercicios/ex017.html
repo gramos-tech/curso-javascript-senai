@@ -7,65 +7,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formmulário</title>
     <style>
+        @charset "UTF-8";
 
-        label{
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(132, 71, 189);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        form {
+            background-color: rgb(68, 6, 148);
+            color: white;
+            width: 320px;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0, );
+            padding: 15px;
+            margin: 15px auto;
+        }
+
+        label {
             display: block;
+            margin-bottom: 10px;
         }
 
-        .label-radio{
-            display: inline;
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 2px 1px 5px rgb(0, 0, 0);
         }
 
+        .radio,
+        .checkbox {
+            width: 10%;
+            box-shadow: none;
+        }
+
+        .button {
+            width: 100%;
+            margin: 15px auto;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 2px 1px 5px blue;
+        }
+
+        img {
+            width: 60px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
 <body>
-    
-    <h1>Trabalhando com formulários</h1>
-    
-    <form method="post" >
 
-        <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome" required>
+    <form id="form">
 
-        <label for="idade">Idade</label>
-        <input type="number" name="idade" id="idade" required>
+        <img src="../Nubank_logo_2021.svg.png" alt="">
+        <h1>Cadastre-se</h1>
 
-        <label for="nota">Notas</label >
-        <input type="number" name="nota" id="nota" min="0" max="10" required>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required placeholder="Nome do usuário">
 
-        <label for="senha">Senha</label>
-        <input type="password" name="senha" id="senha" required>
+        <label for="idade">Idade:</label>
+        <input type="number" name="idade" id="idade" required placeholder="idade">
 
-        <label for="email">E-mail</label>
-        <input type="text" name="email" id="email" required>
-        
-        <br>
+        <label for="nota">Nota:</label>
+        <input type="number" name="nota" id="nota" min="0" max="10" required placeholder="nota">
 
-        <label for="casado" class="label-radio">Casado</label>
-        <input type="radio" name="status" id="casado">
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" id="senha" required placeholder="senha">
 
-        <label for="solteiro" class="label-radio">Solteiro</label>
-        <input type="radio" name="status" id="solteiro">
+        <label for="email">E-mail:</label>
+        <input type="text" name="email" id="email" required placeholder="e-mail">
 
-        <label for="viuvo" class="label-radio">Viuvo</label>
-        <input type="radio" name="status" id="viuvo">
-
-        <label for="bike">Bike</label>
-        <input type="checkbox" name="bike" id="bike">
-
-        <label for="natacao">Natação</label>
-        <input type="checkbox" name="natacao" id="natacao">
-
-        <label for="box">Box</label>
-        <input type="checkbox" name="box" id="box">
-        
         <br>
         <br>
 
-        <input type="submit" value="Enviar">
+        <label for="">Estado Civil:</label>
+        <input type="radio" name="status" id="casado" class="radio">casado
+        <input type="radio" name="status" id="solteiro" class="radio">Solteiro
+        <input type="radio" name="status" id="viuvo" class="radio">Viuvo
+
+        <br>
+        <br>
+
+        <label for="">Atividades:</label>
+        <input type="checkbox" class="checkbox" name="bike" id="bike">Bike
+        <input type="checkbox" class="checkbox" name="natacao" id="natacao">Natação
+        <input type="checkbox" class="checkbox" name="box" id="box">Box
+        <br>
+        <input type="submit" value="Enviar" class="button">
 
     </form>
+
+    <script>
+
+        let form = document.getElementById('form')
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault() //para cancelar o comportamento padrao(enviar para algum lugar)
+            console.log("O evento submit foi disparado")
+
+            let nomeUsuario = document.getElementById('nome').value
+            alert(`Olá ${nomeUsuario}, formulário enviado.`)
+
+        })
+
+        let body = document.querySelector('body')
+        body.addEventListener('keypress', function (event) {
+            if (event.key == 'f') {
+                window.location.href = ("/page02.html")
+                console.log("A tecla 'f' foi pressionada!")
+            }
+        })
+
+    </script>
 
 </body>
 
