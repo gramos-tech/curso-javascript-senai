@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 019</title>
+</head>
+
+<body>
+    
+    <h1>Consultar CEP</h1>
+    
+    <input type="text" name="cep" id="cep">
+    <button id="botao">Consultar</button>
+
+    <p id="endereco"></p>
+    <!-- <p id="bairro"></p>
+    <p id="estado"></p> -->
+
+    <script>
+        
+        let botao = document.getElementById('botao')
+
+        let endereco = document.getElementById('endereco')
+        // let bairro = document.getElementById('bairro')
+        // let estado = document.getElementById('estado')
+
+        botao.addEventListener('click', buscarCep)
+
+        async function buscarCep(){
+
+            let cepUsuario = document.getElementById('cep').value
+
+            let urlApi = `https://viacep.com.br/ws/${cepUsuario}/json/`
+
+            let response = await fetch(urlApi)
+
+            let dados = await response.json()
+
+            console.log(dados)
+
+            endereco.innerHTML = `Rua: ${dados.logradouro}, ${dados.bairro}, ${dados.localidade}, ${dados.estado}, ${dados.cep}`
+        }
+        
+    </script>
+
+</body>
+
+</html>

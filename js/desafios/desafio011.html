@@ -7,22 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Login</title>
     <style>
-
-        *{
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        body{
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             font-family: Arial, Helvetica, sans-serif;
         }
-        
-        form{
+
+        form {
             width: 300px;
             display: flex;
             flex-direction: column;
@@ -31,26 +30,26 @@
             box-shadow: 1px 2px 15px 2px black;
         }
 
-        h1{
+        h1 {
             text-align: center;
         }
 
-        input{
+        input {
             width: 100%;
             border: none;
             border-radius: 10px;
         }
 
-        label{
+        label {
             margin: 5px;
             font-weight: bold;
         }
 
-        .btn-value{
+        .btn-value {
             padding: 7px;
         }
-        
-        .btn-submit{
+
+        .btn-submit {
             margin: 30px 5px 0 0;
             padding: 13px;
             font-size: 16px;
@@ -58,17 +57,16 @@
             cursor: pointer;
         }
 
-        .btn-submit:hover{
+        .btn-submit:hover {
             background-color: black;
             color: white;
         }
-
     </style>
 </head>
 
 <body>
 
-    <form id="form">
+    <form id="formulario">
 
         <h1 id="titulo">Login</h1>
 
@@ -78,24 +76,30 @@
         <label for="senha">Senha:</label>
         <input type="password" name="senha" id="senha" class="btn-value">
 
-        <input type="submit" value="Enviar" class="btn-submit">
-        
+        <button type="submit" value="Enviar" class="btn-submit">Enviar</button>
+
     </form>
 
     <script>
 
-        let email = document.getElementById('email').value
-        let senha = document.getElementById('senha').value
-        let form = document.getElementById('form')
-        
-        form.addEventListener('submit', logar())
-        
+        const form = document.getElementById('formulario')
 
-        function logar (){
-            if (email == "guhramos@senai.com" && senha == 12345){
-                window.location.href = ("/page02.html")
+        const emailCorreto = 'guhramos@senai.com'
+        const senhaCorreta = '123456'
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault()
+
+            const emailUsuario = document.getElementById('email').value
+            const senhaUsuario = document.getElementById('senha').value
+
+            if (emailUsuario === emailCorreto && senhaUsuario === senhaCorreta) {
+                document.location.href = 'page02.html'
+            }else{
+                alert('Usuário ou senha incorretos!')
             }
         }
+        )
 
 
 
